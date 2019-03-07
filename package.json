@@ -1,0 +1,8 @@
+{
+  "name": "vue-ssr-used-hypernova",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/konojunya/vue-ssr-used-hypernova.git",
+  "author": "konojunya <junya03dance@gmail.com>",
+  "license": "MIT"
+}
