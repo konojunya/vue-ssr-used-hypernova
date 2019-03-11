@@ -10,13 +10,9 @@ import App from "./App.vue";
 const renderer = createRenderer();
 
 server({
-  devMode: process.env.NODE_ENV !== "produxtion",
+  devMode: process.env.NODE_ENV !== "production",
   port: process.env.PORT || 5000,
   getComponent: (name) => {
-    if (name !== "App") {
-      return null;
-    }
-
     return async (props) => {
       const $vm = new Vue({
         render: (h) => h(App, {
@@ -24,7 +20,7 @@ server({
         }, [])
       });
       const html = await renderer.renderToString($vm);
-      return Hypernova.serialize(name, html, props);
+      return Hypernova.serialize("name", html, props);
     }
   }
 })

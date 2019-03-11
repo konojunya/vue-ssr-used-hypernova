@@ -1,7 +1,7 @@
 require "hypernova/controller_helpers"
 
 Hypernova.configure do |config|
-  config.host = "node"
+  config.host = "localhost"
   config.port = 5000
 end
 
