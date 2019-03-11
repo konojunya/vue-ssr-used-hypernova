@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VueSsrUsedHypernova</title>
+    <title>vue-ssr-used-hypernova</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= webpack_js_tag "main", defer: true %>
   </head>
 
   <body>

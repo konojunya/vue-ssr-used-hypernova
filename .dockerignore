@@ -1,0 +1,7 @@
+/vendor/bundle
+/tmp
+/bin
+/log
+/node_modules
+/frontend/dist
+/public/frontend

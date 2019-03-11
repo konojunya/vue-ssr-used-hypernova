@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'sample' => "sample#hello"
+  root "home#index"
 end

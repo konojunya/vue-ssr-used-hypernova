@@ -1,0 +1,39 @@
+version: "3"
+services:
+  database:
+      image: postgres
+      env_file: ../.env
+      volumes:
+        - "database:/var/lib/postgresql/data"
+  node:
+    image: hypernova-vue-example/node
+    build:
+      context: ../
+      dockerfile: ./docker/node.Dockerfile
+    command: ["sh", "-c", "yarn && yarn dev"]
+    volumes:
+      - "../:/app"
+      - /app/node_modules
+    ports:
+      - "8000:8000"
+  rails:
+    image: hypernova-vue-example/rails
+    build:
+      context: ../
+      dockerfile: ./docker/rails.Dockerfile
+    command: ["sh", "-c", "bundle && bundle exec rails server -b 0.0.0.0"]
+    env_file: ../.env
+    volumes:
+      - "../:/app"
+      - /app/tmp
+      - /app/vendor/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node
+      - database
+networks:
+  default:
+    driver: bridge
+volumes:
+  database: {}
