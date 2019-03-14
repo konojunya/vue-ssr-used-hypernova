@@ -1,17 +1,35 @@
 <template>
   <section>
-    <h1>hello from vue</h1>
-    <p v-if="user">Your name is {{user.name}}</p>
-    <button @click="handleClick">ボタン</button>
+    <count :count="count"></count>
+    <button @click="handleIncrement">increment</button>
+    <button @click="handleDecrement">async decrement</button>
   </section>
 </template>
 
 <script>
+import Count from "./Count.vue";
+
 export default {
-  props: ["user"],
+  components: {
+    Count
+  },
+  data() {
+    return {
+      count: 0
+    };
+  },
   methods: {
-    handleClick() {
-      console.log("hello");
+    handleIncrement() {
+      this.count += 1;
+    },
+    async handleDecrement() {
+      const p = new Promise(resolve => {
+        setTimeout(() => {
+          resolve(this.count - 1);
+        }, 1000);
+      });
+      const count = await p;
+      this.count = count;
     }
   }
 };
