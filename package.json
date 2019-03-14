@@ -5,18 +5,18 @@
   "scripts": {
     "start": "node frontend/dist/server.js",
     "build": "npm-run-all -p build:*",
-    "build:client": "webpack --mode production --config webpack/webpack.config.client.js",
-    "build:server": "webpack --mode production --config webpack/webpack.config.server.js",
+    "build:client": "webpack --config webpack/webpack.config.client.js",
+    "build:server": "webpack --config webpack/webpack.config.server.js",
     "dev": "npm-run-all -p dev:*",
-    "dev:client": "webpack-dev-server --hot --mode development --config webpack/webpack.config.client.js",
-    "dev:server": "webpack --watch --mode development --config webpack/webpack.config.server.js"
+    "dev:client": "yarn build:client --watch",
+    "dev:server": "yarn build:server --watch"
   },
   "repository": "ssh://git@github.com/konojunya/vue-ssr-used-hypernova.git",
   "author": "konojunya <junya03dance@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.6.8",
-    "hypernova": "^2.5.0"
+    "hypernova": "^2.5.0",
+    "vue": "^2.6.8"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.9.10",
