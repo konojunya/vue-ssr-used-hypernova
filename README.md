@@ -9,3 +9,8 @@
 2. yarn build
 3. bundle install --path=vendor/bundle
 4. bundle exec rails s & yarn start
+
+## Development
+
+- yarn & yarn dev
+- bundle install --path=vendor/bundle & bundle exec rails s
