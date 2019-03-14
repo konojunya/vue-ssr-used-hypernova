@@ -20,7 +20,7 @@ server({
         }, [])
       });
       const html = await renderer.renderToString($vm);
-      return Hypernova.serialize("name", html, props);
+      return Hypernova.serialize(name, html, props);
     }
   }
 })
