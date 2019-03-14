@@ -4,11 +4,10 @@
     <title>vue-ssr-used-hypernova</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <!-- <%= webpack_js_tag "main", defer: true %> -->
   </head>
 
   <body>
     <%= yield %>
+    <%= webpack_js_tag "main" %>
   </body>
 </html>
