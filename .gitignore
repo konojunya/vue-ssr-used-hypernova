@@ -32,3 +32,9 @@
 
 vendor/
 .env
+
+# Ignore build
+/frontend/dist
+/public/frontend
+# Ignore webpack-assets
+/webpack-assets.json
